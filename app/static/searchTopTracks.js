@@ -3,15 +3,21 @@ async function searchTopTracks() {
     const year = document.getElementById('year').value;
     const country = document.getElementById('country').value;
     const genre = document.getElementById('genre').value;
-    const artiste = document.getElementById('artiste').value;
-
     // if (!year || !country || !genre || !artiste) {
     //     alert('Veuillez sélectionner tous les critères.');
     //     return;
     // }
 
+    if (!selectedArtist.id) {
+        console.error('Aucun artiste sélectionné');
+        return;
+    }
+
+    console.log(`Recherche des Top Tracks pour l'artiste : ${selectedArtist.name} (ID: ${selectedArtist.id})`);
+
+
     try {
-        const response = await fetch(`/search?year=${year}&country=${country}&genre=${genre}&artiste=${artiste}`);
+        const response = await fetch(`/search?year=${year}&country=${country}&genre=${genre}&artiste=${selectedArtist.name}`);
         const data = await response.json();
 
         // Traitement des résultats

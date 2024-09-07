@@ -40,15 +40,10 @@
 
             <div class="form-group">
                 <label for="artiste">Artiste :</label>
-                <select id="artiste" name="artiste">
-                    <option value="">Sélectionner un artiste</option>
-                    <option value="Eargasm God">Eargasm God</option>
-                    <option value="AREA ØNE">AREA ØNE</option>
-                    <option value="JUL">JUL</option>
-                    <option value="Soolking">Soolking</option>
-                </select>
+                <input type="text" id="artiste_search_input" name="artiste_search_input" placeholder="Entrez le nom de l'artiste">
             </div>
 
+            <div id="artist-suggestions" class="suggestions-container"></div>
 
             <button type="button" onclick="searchTopTracks()">Valider</button>
         </form>
@@ -59,5 +54,7 @@
     <!-- Lien vers les fichiers JavaScript -->
     <script src="{{ url_for('static', filename='searchTopTracks.js') }}"></script>
     <script src="{{ url_for('static', filename='countries.js') }}"></script>
+    <script src="{{ url_for('static', filename='fetchArtistSuggestions.js') }}"></script>
+    
 </body>
 </html>
