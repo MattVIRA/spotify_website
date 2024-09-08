@@ -39,8 +39,7 @@ def search_artist(access_token, artist_name):
     return None
 
 
-def get_artist_top_tracks(access_token, artist_name, country_code='US'):
-    artist_id = search_artist(access_token, artist_name)
+def get_artist_top_tracks(access_token, artist_id, country_code='US'):
     top_tracks_url = f'https://api.spotify.com/v1/artists/{artist_id}/top-tracks'
     headers = {
         'Authorization': f'Bearer {access_token}',

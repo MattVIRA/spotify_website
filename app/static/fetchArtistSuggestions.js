@@ -65,9 +65,9 @@ function selectArtist(artistId, artistName) {
     selectedArtist = {
         id: artistId,
         name: artistName,
-        imageUrl: selectedArtistImg
+        imageUrl: selectedArtistImg.src
     };
 
-
     console.log(`Artiste sélectionné : ${artistName} (ID: ${artistId})`);
+
 }

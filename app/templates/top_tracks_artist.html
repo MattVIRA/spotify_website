@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Accueil</title>
+    <link rel="icon" href="{{ url_for('static', filename='images/icon_spotistats.png') }}" type="image/png">
+    <link rel="stylesheet" href="{{ url_for('static', filename='top_tracks_artist.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+
+<body>
+    <div class="container">
+        <div class="main-div">
+            <form id="searchForm">
+                <div class="form-group">
+                    <label for="artiste">Artiste :</label>
+                    <input type="text" id="artiste_search_input" name="artiste_search_input" placeholder="Entrez le nom de l'artiste">
+                </div>
+
+                <div id="artist-suggestions" class="suggestions-container"></div>
+
+                <button type="button" onclick="searchTopTracks()">Valider</button>
+            </form>
+
+            <div id="results"></div>
+        </div>
+    </div>
+
+    <!-- Lien vers les fichiers JavaScript -->
+    <script src="{{ url_for('static', filename='searchTopTracks.js') }}"></script>
+    <script src="{{ url_for('static', filename='fetchArtistSuggestions.js') }}"></script>
+    
+</body>
+</html>

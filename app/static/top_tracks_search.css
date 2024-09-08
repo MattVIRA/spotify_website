@@ -1,0 +1,9 @@
+
+/* Styles pour les select */
+select {
+    padding: 10px;
+    font-size: 16px;
+    border-radius: 10px;
+    height: 40px; /* Assure que la hauteur est la même que pour l'input */
+    box-sizing: border-box; /* Assure que padding et border sont inclus dans la largeur totale */
+}

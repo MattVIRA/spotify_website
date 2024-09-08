@@ -9,19 +9,20 @@ main = Blueprint('main', __name__)
 
 # Route pour la page d'accueil
 @main.route('/')
-def index():
-    return render_template('index.html')
-
-@main.route('/accueil')
 def accueil():
     return render_template('accueil.html')
 
+@main.route('/top_tracks_artist')
+def top_tracks_artist():
+    return render_template('top_tracks_artist.html')
+
+@main.route('/top_tracks_search')
+def top_tracks_search():
+    return render_template('top_tracks_search.html')
+
 @main.route('/search')
 def search():
-    year = request.args.get('year')
-    country = request.args.get('country')
-    genre = request.args.get('genre')
-    artiste_name = request.args.get('artiste')
+    artiste_id = request.args.get('artiste_id')
 
     client_id = current_app.config.get('SPOTIFY_CLIENT_ID')
     client_secret = current_app.config.get('SPOTIFY_CLIENT_SECRET')
@@ -32,7 +33,7 @@ def search():
     try:
         access_token = get_access_token(client_id, client_secret)
 
-        top_tracks = get_artist_top_tracks(access_token, artiste_name)
+        top_tracks = get_artist_top_tracks(access_token, artiste_id)
 
         return jsonify({'tracks': top_tracks})
 

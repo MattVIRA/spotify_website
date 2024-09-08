@@ -3,58 +3,34 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Accueil</title>
+    <title>Spotistat</title>
     <link rel="icon" href="{{ url_for('static', filename='images/icon_spotistats.png') }}" type="image/png">
-    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
-</head>
 
+    <link rel="stylesheet" href="{{ url_for('static', filename='accueil.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet"> <!-- Google Fonts -->
+</head>
 <body>
     <div class="container">
-        <form id="searchForm">
-            <div class="form-group">
-                <label for="year">Année :</label>
-                <select id="year" name="year">
-                    <option value="">Sélectionner une année</option>
-                    {% for year in range(2020, 2025) %}
-                        <option value="{{ year }}">{{ year }}</option>
-                    {% endfor %}
-                </select>
+
+        <div class="main-box">
+
+            <div class="bienvenue">
+                <img src="{{ url_for('static', filename='images/logo_spotistats.png') }}" alt="Logo Spotify" class="logo">
+                <p>Bienvenue sur Spotistat !!</p>
             </div>
 
-            <div class="form-group">
-                <label for="country">Pays :</label>
-                <select id="country" name="country">
-                    <option value="">Sélectionner un pays</option>
-                </select>
-            </div>
+            <a href="{{ url_for('main.top_tracks_artist') }}" class="box-link">
+                <img src="{{ url_for('static', filename='images/icon_top_10.png') }}" alt="Logo top 10" class="logo_top_10">
+                <p>Top tracks by artist</p>
+            </a>
 
-            <div class="form-group">
-                <label for="genre">Genre :</label>
-                <select id="genre" name="genre">
-                    <option value="">Sélectionner un genre</option>
-                    <option value="Rap">Rap</option>
-                    <option value="Disco">Disco</option>
-                    <option value="Techno">Techno</option>
-                </select>
-            </div>
+            <a href="{{ url_for('main.top_tracks_search') }}" class="box-link">
+                <img src="{{ url_for('static', filename='images/icon_top_tracks_search.png') }}" alt="Logo top 10" class="logo_top_10">
+                <p>Top tracks by artist</p>
+            </a>
 
-            <div class="form-group">
-                <label for="artiste">Artiste :</label>
-                <input type="text" id="artiste_search_input" name="artiste_search_input" placeholder="Entrez le nom de l'artiste">
-            </div>
-
-            <div id="artist-suggestions" class="suggestions-container"></div>
-
-            <button type="button" onclick="searchTopTracks()">Valider</button>
-        </form>
-
-        <div id="results"></div>
+        </div>
     </div>
-
-    <!-- Lien vers les fichiers JavaScript -->
-    <script src="{{ url_for('static', filename='searchTopTracks.js') }}"></script>
-    <script src="{{ url_for('static', filename='countries.js') }}"></script>
-    <script src="{{ url_for('static', filename='fetchArtistSuggestions.js') }}"></script>
-    
 </body>
 </html>
