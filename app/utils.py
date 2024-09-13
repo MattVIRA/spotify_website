@@ -84,3 +84,15 @@ def get_artists_suggested(access_token, search_name):
 
     return artists
 
+def get_information_user(access_token):
+    search_url = f'https://api.spotify.com/v1/me'
+    
+    headers = {
+        'Authorization': f'Bearer {access_token}'
+    }
+
+    response = requests.get(search_url, headers=headers)
+    
+    request_results = response.json()
+
+    return request_results

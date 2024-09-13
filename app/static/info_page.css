@@ -1,0 +1,52 @@
+
+#results {
+    align-items: center;
+    justify-content: center;
+    background-color: #1b1b1b; /* Fond sombre à l'intérieur du cadre */
+    border: 6px solid white; /* Bordure blanche épaisse */
+    border-radius: 8px; /* Coins arrondis */
+    padding: 20px;
+    box-sizing: border-box; /* Inclut la bordure et le padding dans la largeur totale */
+    color: white; /* Texte en blanc */
+    display: none; /* Cacher par défaut */
+    text-align: center;
+    
+}
+
+.prov {
+    align-items: center;
+    justify-content: center;
+    background-color: #1b1b1b; /* Fond sombre à l'intérieur du cadre */
+    border: 6px solid white; /* Bordure blanche épaisse */
+    border-radius: 8px; /* Coins arrondis */
+    padding: 20px;
+    margin-bottom: 40px;
+    box-sizing: border-box; /* Inclut la bordure et le padding dans la largeur totale */
+    color: white; /* Texte en blanc */
+    text-align: center;
+}
+
+
+.track-item {
+    display: flex;
+    padding-bottom: 5px;
+}
+
+
+li {
+    text-align: left;
+}
+
+.track-image {
+    width: 40px;
+    height: 40px;
+    padding-right: 5px;  
+}
+
+.track-index {
+    align-items: center;
+    justify-content: center;
+    padding-right: 8px;
+    text-align: center;
+
+}

@@ -11,6 +11,13 @@
 
 <body>
     <div class="container">
+        <!-- Bouton pour revenir à l'accueil -->
+        <div class="home-button">
+            <a href="{{ url_for('main.accueil') }}">
+                <img src="{{ url_for('static', filename='images/icon_home.png') }}" alt="icon-home-png" class="logo-home">
+            </a>
+        </div>
+
         <div class="main-div">
             <form id="searchForm">
                 <div class="form-group">
@@ -30,6 +37,7 @@
     <!-- Lien vers les fichiers JavaScript -->
     <script src="{{ url_for('static', filename='searchTopTracks.js') }}"></script>
     <script src="{{ url_for('static', filename='fetchArtistSuggestions.js') }}"></script>
+    <script src="{{ url_for('static', filename='scripts.js') }}"></script>
     
 </body>
 </html>

@@ -11,6 +11,8 @@
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet"> <!-- Google Fonts -->
 </head>
 <body>
+
+    
     <div class="container">
 
         <div class="main-box">
@@ -28,6 +30,11 @@
             <a href="{{ url_for('main.top_tracks_search') }}" class="box-link">
                 <img src="{{ url_for('static', filename='images/icon_top_tracks_search.png') }}" alt="Logo top 10" class="logo_top_10">
                 <p>Top tracks by artist</p>
+            </a>
+
+            <a href="{{ url_for('main.login') }}" class="box-link">
+                <img src="{{ url_for('static', filename='images/icon_me.png') }}" alt="icon-me-png" class="logo_top_10">
+                <p>À propos de moi</p>
             </a>
 
         </div>

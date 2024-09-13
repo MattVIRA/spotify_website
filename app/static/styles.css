@@ -20,3 +20,32 @@ body, html {
 }
 
 
+.logo-home {
+    width: 40px; /* Taille du logo */
+    height: auto;
+    padding: 5px;
+}
+
+.home-button {
+    position: fixed; /* Reste toujours en place même lors du scroll */
+    top: 10px; /* Distance par rapport au haut de l'écran */
+    left: 10px; /* Distance par rapport au bord gauche */
+    z-index: 1000; /* S'assure que le bouton reste au-dessus d'autres éléments */
+    display: flex;
+    align-items: center;
+
+    border: 3px solid white; /* Bordure blanche épaisse */
+    border-radius: 7px; /* Coins arrondis */
+    background-color: #1ed760;
+}
+
+.home-text {
+    position: "absolute";
+    left: 50px; 
+    top :0;
+    padding :5px 10px;
+    font-size: 20px;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 300;
+
+}

@@ -46,8 +46,12 @@ label {
     display: none; /* Cacher par défaut */
     margin-left: 30px;
     text-align: center;
+    
 }
 
+li {
+    text-align: left;
+}
 .suggestions-container {
     display: flex;
     flex-wrap: wrap;

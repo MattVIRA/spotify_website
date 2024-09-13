@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>À propos de moi</title>
+    <link rel="icon" href="{{ url_for('static', filename='images/icon_spotistats.png') }}" type="image/png">
+    <link rel="stylesheet" href="{{ url_for('static', filename='info_page.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+
+<body>
+    <div class="container">
+        <div class="home-button">
+            
+            <a href="{{ url_for('main.accueil') }}">
+                <img src="{{ url_for('static', filename='images/icon_home.png') }}" alt="icon-home-png" class="logo-home">
+            </a>
+        </div>
+        
+        <div class="prov">
+            Mon top 10 tracks (4 semaines)
+        </div>
+
+        <div id="results" class="results">
+
+        </div>
+
+    </div>
+
+
+    <script src="{{ url_for('static', filename='scripts.js') }}"></script>
+    <script src="{{ url_for('static', filename='info_page.js') }}"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            informations();
+        });
+    </script>
+
+    
+</body>
+</html>

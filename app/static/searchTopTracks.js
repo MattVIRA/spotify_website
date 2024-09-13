@@ -38,7 +38,6 @@ async function searchTopTracks() {
             artistName.textContent = selectedArtist.name; // Ajouter le nom de l'artiste
             artistName.style.color = 'white'; // Couleur du texte
             artistName.style.marginBottom = '10px'; // Ajouter un peu d'espace sous le nom
-
             // Ajouter le nom et l'image avant la liste des pistes
             resultsDiv.appendChild(artistName);
             resultsDiv.appendChild(img);

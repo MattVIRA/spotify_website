@@ -11,6 +11,11 @@
 
 <body>
     <div class="container">
+        <div class="home-button">
+            <a href="{{ url_for('main.accueil') }}">
+                <img src="{{ url_for('static', filename='images/icon_home.png') }}" alt="icon-home-png" class="logo-home">
+            </a>
+        </div>
         <form id="searchForm">
 
             <div class="form-group">
@@ -50,6 +55,8 @@
 
     <!-- Lien vers les fichiers JavaScript -->
     <script src="{{ url_for('static', filename='countries.js') }}"></script>
+    <script src="{{ url_for('static', filename='scripts.js') }}"></script>
+
     
 </body>
 </html>
