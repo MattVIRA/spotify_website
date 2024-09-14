@@ -1,5 +1,6 @@
 
 #results {
+    display: flex;
     align-items: center;
     justify-content: center;
     background-color: #1b1b1b; /* Fond sombre à l'intérieur du cadre */
@@ -13,6 +14,12 @@
     
 }
 
+.column {
+    width: 400px;  /* Ajustez si nécessaire */
+    display: flex;
+    flex-direction: column;
+    padding: 5px;
+}
 .prov {
     align-items: center;
     justify-content: center;
@@ -24,29 +31,76 @@
     box-sizing: border-box; /* Inclut la bordure et le padding dans la largeur totale */
     color: white; /* Texte en blanc */
     text-align: center;
+    font-size: 40px;
 }
 
 
 .track-item {
     display: flex;
-    padding-bottom: 5px;
+    padding: 15px;
+    align-items: center;
+    border-bottom: 1px solid #101010;
+    cursor: pointer;
+
+
 }
 
-
-li {
-    text-align: left;
+.track-item:hover {
+    border: 1px solid #1DB954; /* Bordure blanche épaisse */
+    border-radius: 8px; /* Coins arrondis */   
 }
-
 .track-image {
-    width: 40px;
-    height: 40px;
+    width: 50px;
+    height: 50px;
+    object-fit: cover;
     padding-right: 5px;  
 }
 
 .track-index {
     align-items: center;
     justify-content: center;
-    padding-right: 8px;
+    padding-right: 8px; 
     text-align: center;
+
+}
+
+.track-name {
+    margin: 5px 0;
+    align-items: center;
+    justify-content: center;
+}
+
+.choice-container {
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+    cursor: pointer;
+
+}
+
+.choice-box {
+    display: flex;
+    background-color: white;
+    margin: 15px;
+    color: #000000;
+    align-items: center;
+
+
+}
+.choice-box-text {
+    align-items: center;
+    margin: 5px;
+    font-size: 25px;
+}
+
+.logo-choices {
+    width: 50px;
+    height: auto;
+    margin-right: 10px;
+}
+
+.selected {
+    border: 4px solid #1DB954;
+    border-radius:  6px;
 
 }

@@ -95,7 +95,6 @@ def get_spotify_auth_url(state):
 
 @main.route('/login')
 def login():
-
     state = generate_random_string(16)
     session['state'] = state
 
@@ -107,7 +106,6 @@ def login():
 def callback():
     code = request.args.get('code')
     state = request.args.get('state')
-
     stored_state = session.get('state')
 
     print(f"État stocké : {stored_state}")
@@ -141,8 +139,8 @@ def callback():
         return f"Erreur lors de l'obtention du token : {token_response_data.get('error_description', 'Unknown error')}"
     
 
-@main.route('/api/user_info', methods=['GET'])
-def api_user_info():
+@main.route('/api/user_info_tracks', methods=['GET'])
+def api_user_info_tracks():
     access_token = session.get('access_token')
     if not access_token:
         return "Utilisateur non authentifié", 401
@@ -152,7 +150,23 @@ def api_user_info():
         'limit': 10,
         'time_range':"short_term",
     }
-    r = requests.get(current_app.config.get('SPOTIFY_USER_PROFILE_URL'), headers=headers, params=params)
+    r = requests.get(current_app.config.get('SPOTIFY_USER_TOP_TRACKS_URL'), headers=headers, params=params)
+    user_data = r.json()
+
+    return user_data["items"]
+
+@main.route('/api/user_info_artists', methods=['GET'])
+def api_user_info_artists():
+    access_token = session.get('access_token')
+    if not access_token:
+        return "Utilisateur non authentifié", 401
+
+    headers = {'Authorization': f"Bearer {access_token}"}
+    params = {
+        'limit': 10,
+        'time_range':"short_term",
+    }
+    r = requests.get(current_app.config.get('SPOTIFY_USER_TOP_ARTISTS_URL'), headers=headers, params=params)
     user_data = r.json()
 
     return user_data["items"]

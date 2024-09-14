@@ -15,7 +15,7 @@ body, html {
     align-items: center;
     height: 100vh; /* Hauteur de la fenêtre du navigateur */
     width: 100%;
-    padding-top: 100px;
+    padding-top: 40px;
     background-color: #000000; /* Fond noir */
 }
 
