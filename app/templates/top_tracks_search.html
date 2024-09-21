@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Accueil</title>
+    <link rel="icon" href="{{ url_for('static', filename='images/icon_spotistats.png') }}" type="image/png">
+    <link rel="stylesheet" href="{{ url_for('static', filename='top_tracks_artist.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+
+<body>
+    <div class="container">
+        <div class="home-button">
+            <a href="{{ url_for('main.accueil') }}">
+                <img src="{{ url_for('static', filename='images/icon_home.png') }}" alt="icon-home-png" class="logo-home">
+            </a>
+        </div>
+        <form id="searchForm">
+
+            <div class="form-group">
+                <label for="year">Année :</label>
+                <select id="year" name="year">
+                    <option value="">Sélectionner une année</option>
+                    {% for year in range(2020, 2025) %}
+                        <option value="{{ year }}">{{ year }}</option>
+                    {% endfor %}
+                </select>
+            </div>
+            
+            <div class="form-group">
+                <label for="country">Pays :</label>
+                <select id="country" name="country">
+                    <option value="">Sélectionner un pays</option>
+                </select>
+            </div>
+            
+            <div class="form-group">
+                <label for="genre">Genre :</label>
+                <select id="genre" name="genre">
+                    <option value="">Sélectionner un genre</option>
+                    <option value="Rap">Rap</option>
+                    <option value="Disco">Disco</option>
+                    <option value="Techno">Techno</option>
+                </select>
+            </div>
+            
+            <div id="artist-suggestions" class="suggestions-container"></div>
+
+            <button type="button" onclick="searchTopTracks()">Valider</button>
+        </form>
+
+        <div id="results"></div>
+    </div>
+
+    <!-- Lien vers les fichiers JavaScript -->
+    <script src="{{ url_for('static', filename='countries.js') }}"></script>
+    <script src="{{ url_for('static', filename='scripts.js') }}"></script>
+
+    
+</body>
+</html>

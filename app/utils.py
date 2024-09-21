@@ -31,7 +31,6 @@ def search_artist(access_token, artist_name):
     
     response = requests.get(search_url, headers=headers, params=params)
     search_results = response.json()
-    print(search_results)
     # Extraire l'ID de l'artiste
     artists = search_results.get('artists', {}).get('items', [])
 
@@ -40,8 +39,7 @@ def search_artist(access_token, artist_name):
     return None
 
 
-def get_artist_top_tracks(access_token, artist_name, country_code='US'):
-    artist_id = search_artist(access_token, artist_name)
+def get_artist_top_tracks(access_token, artist_id, country_code='US'):
     top_tracks_url = f'https://api.spotify.com/v1/artists/{artist_id}/top-tracks'
     headers = {
         'Authorization': f'Bearer {access_token}',
@@ -64,4 +62,37 @@ def get_artist_top_tracks(access_token, artist_name, country_code='US'):
     
     return top_tracks
 
+def get_artists_suggested(access_token, search_name):
+    search_url = f'https://api.spotify.com/v1/search'
+    
+    headers = {
+        'Authorization': f'Bearer {access_token}',
+        'Content-Type': 'application/json'
+    }
 
+    params = {
+        'q': search_name,
+        'type': 'artist',
+        'limit': 3
+    }
+
+    response = requests.get(search_url, headers=headers, params=params)
+
+    request_results = response.json()
+
+    artists = request_results.get('artists', {}).get('items', [])
+
+    return artists
+
+def get_information_user(access_token):
+    search_url = f'https://api.spotify.com/v1/me'
+    
+    headers = {
+        'Authorization': f'Bearer {access_token}'
+    }
+
+    response = requests.get(search_url, headers=headers)
+    
+    request_results = response.json()
+
+    return request_results

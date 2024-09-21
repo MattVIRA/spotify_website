@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>À propos de moi</title>
+    <link rel="icon" href="{{ url_for('static', filename='images/icon_spotistats.png') }}" type="image/png">
+    <link rel="stylesheet" href="{{ url_for('static', filename='info_page.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+
+<body>
+    <div class="container">
+        <div class="home-button">
+            <a href="{{ url_for('main.accueil') }}">
+                <img src="{{ url_for('static', filename='images/icon_home.png') }}" alt="icon-home-png" class="logo-home">
+            </a>
+        </div>
+
+        <div class =choice-container>
+            <div class =choice-box>
+                <img src="{{ url_for('static', filename='images/icon_tracks.png') }}" alt="icon-tracks-png" class="logo-choices">
+                <div class="choice-box-text"> Tracks </div>
+            </div>
+            <div class =choice-box>
+                <img src="{{ url_for('static', filename='images/icon_artists.png') }}" alt="icon-artists-png" class="logo-choices">
+                <div class="choice-box-text"> Artists </div>
+            </div>
+        </div>
+        
+        <div class="prov">
+            Mon TOP 10 (4 semaines)
+        </div>
+
+        <div id="results">
+            <div id="left-column" class="column"></div>
+            <div id="right-column" class="column"></div>
+        </div>
+
+    </div>
+
+
+    <script src="{{ url_for('static', filename='scripts.js') }}"></script>
+    <script src="{{ url_for('static', filename='info_page.js') }}"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const divTrack = document.querySelector('.choice-container .choice-box:nth-child(1)');
+            divTrack.classList.add('selected');
+            track_informations();
+        });
+    </script>
+    
+</body>
+</html>

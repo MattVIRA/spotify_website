@@ -1,0 +1,112 @@
+form {
+    height: 360px;
+    width: 530px;
+    align-items: center;
+    background-color: #1b1b1b; /* Fond vert à l'intérieur du cadre */
+    border: 6px solid white; /* Bordure blanche épaisse */
+    border-radius: 8px; /* Coins arrondis */
+    padding: 20px;
+    justify-content: space-between;
+
+    transition: background-color 0.3s, transform 0.3s; /* Transition pour l'effet de survol */
+    position: relative; 
+}
+
+
+.main-div {
+
+    display: flex;
+    align-items: left;
+    justify-content: space-between;
+}
+/* Appliquer le même style au champ input spécifique */
+#artiste_search_input {
+    height: 40px; /* Ajuster la hauteur pour qu'elle corresponde à celle des selects */
+    width: calc(100% - 22px); /* Ajuster la largeur pour qu'elle corresponde à celle des selects, en prenant en compte les marges et padding */
+}
+
+
+
+label {
+    color: white;
+    display: block;
+    margin-bottom: 5px;
+}
+
+
+#results {
+    align-items: center;
+    justify-content: center;
+    background-color: #1b1b1b; /* Fond sombre à l'intérieur du cadre */
+    border: 6px solid white; /* Bordure blanche épaisse */
+    border-radius: 8px; /* Coins arrondis */
+    padding: 20px;
+    box-sizing: border-box; /* Inclut la bordure et le padding dans la largeur totale */
+    color: white; /* Texte en blanc */
+    display: none; /* Cacher par défaut */
+    margin-left: 30px;
+    text-align: center;
+    
+}
+
+li {
+    text-align: left;
+}
+.suggestions-container {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.artist-item {
+    margin: 10px;
+    text-align: center;
+    cursor: pointer;
+}
+
+.artist-image {
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+.artist-image-results {
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+.artist-name {
+    color: white;
+    margin-top: 8px;
+    font-size: 14px;
+}
+
+.selected-artist {
+    border: 5px solid #1ed760;
+}
+
+
+button {
+    padding: 10px 20px;
+    background-color: #1DB954; /* Couleur du bouton (vert Spotify) */
+    border: none;
+    color: #fff;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 10px;
+    margin-bottom: 10px; /* Pousser le bouton vers le bas */
+
+
+    position: absolute; /* Positionnement absolu par rapport à l'élément parent (form) */
+    bottom: 20px; /* 20px à partir du bas du formulaire */
+    left: 50%; /* Centré horizontalement par rapport à la largeur du formulaire */
+    transform: translateX(-50%); /* Centrage parfait en décalant le bouton de 50% vers la gauche */
+}
+
+
+button:hover {
+    background-color: #1ed760;
+}
+
