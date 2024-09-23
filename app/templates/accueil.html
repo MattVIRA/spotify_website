@@ -9,35 +9,77 @@
     <link rel="stylesheet" href="{{ url_for('static', filename='accueil.css') }}">
     <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet"> <!-- Google Fonts -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.9.3/css/bulma.min.css">
+
 </head>
 <body>
-
-    
     <div class="container">
+        <div class="nav-bar">
+            <div class="logo-spotistat">
+                <img src="{{ url_for('static', filename='images/logo_spotistats.png') }}" alt="Logo Spotify" id="logo-spotistat">
+                <p class="text-spotistat">Spotistat</p>
+
+            </div>
+            <div class="search-bar">
+                <input class="input" type="text" placeholder="Rechercher une fonctionnalité...">
+            </div>
+    
+            <div class="about">
+                <p>A propos</p>
+            </div>
+        </div>
 
         <div class="main-box">
-
-            <div class="bienvenue">
-                <img src="{{ url_for('static', filename='images/logo_spotistats.png') }}" alt="Logo Spotify" class="logo">
-                <p>Bienvenue sur Spotistat !!</p>
+            <div class="columns is-multiline">
+                <div class="column is-one-third">
+                    <a href="{{ url_for('main.top_tracks_artist') }}" class="card">
+                        <div class="card-image">
+                            <figure class="image is-4by3">
+                                <img src="{{ url_for('static', filename='images/icon_top_10.png') }}" alt="Top tracks by artist">
+                            </figure>
+                        </div>
+                        <div class="card-content">
+                            <p class="title is-4">Top tracks by artist</p>
+                            <p class="content">
+                                Découvrez les meilleures pistes par vos artistes préférés.
+                            </p>
+                        </div>
+                    </a>
+                </div>
+        
+                <div class="column is-one-third">
+                    <a href="{{ url_for('main.top_tracks_search') }}" class="card">
+                        <div class="card-image">
+                            <figure class="image is-4by3">
+                                <img src="{{ url_for('static', filename='images/icon_top_tracks_search.png') }}" alt="Top tracks by search">
+                            </figure>
+                        </div>
+                        <div class="card-content">
+                            <p class="title is-4">Top tracks by search</p>
+                            <p class="content">
+                                Recherchez et explorez les meilleurs morceaux disponibles.
+                            </p>
+                        </div>
+                    </a>
+                </div>
+        
+                <div class="column is-one-third">
+                    <a href="{{ url_for('main.login') }}" class="card">
+                        <div class="card-image">
+                            <figure class="image is-4by3">
+                                <img src="{{ url_for('static', filename='images/icon_me.png') }}" alt="À propos de moi">
+                            </figure>
+                        </div>
+                        <div class="card-content">
+                            <p class="title is-4">À propos de moi</p>
+                            <p class="content">
+                                En savoir plus sur moi et mes projets.
+                            </p>
+                        </div>
+                    </a>
+                </div>
             </div>
-
-            <a href="{{ url_for('main.top_tracks_artist') }}" class="box-link">
-                <img src="{{ url_for('static', filename='images/icon_top_10.png') }}" alt="Logo top 10" class="logo_top_10">
-                <p>Top tracks by artist</p>
-            </a>
-
-            <a href="{{ url_for('main.top_tracks_search') }}" class="box-link">
-                <img src="{{ url_for('static', filename='images/icon_top_tracks_search.png') }}" alt="Logo top 10" class="logo_top_10">
-                <p>Top tracks by artist</p>
-            </a>
-
-            <a href="{{ url_for('main.login') }}" class="box-link">
-                <img src="{{ url_for('static', filename='images/icon_me.png') }}" alt="icon-me-png" class="logo_top_10">
-                <p>À propos de moi</p>
-            </a>
-
         </div>
-    </div>
+        
 </body>
 </html>

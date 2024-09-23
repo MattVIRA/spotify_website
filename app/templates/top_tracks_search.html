@@ -11,11 +11,21 @@
 
 <body>
     <div class="container">
-        <div class="home-button">
-            <a href="{{ url_for('main.accueil') }}">
-                <img src="{{ url_for('static', filename='images/icon_home.png') }}" alt="icon-home-png" class="logo-home">
-            </a>
+        <div class="nav-bar">
+            <div class="logo-spotistat">
+                <img src="{{ url_for('static', filename='images/logo_spotistats.png') }}" alt="Logo Spotify" id="logo-spotistat">
+                <p class="text-spotistat">Spotistat</p>
+
+            </div>
+            <div class="search-bar">
+                <input class="input" type="text" placeholder="Rechercher une fonctionnalité...">
+            </div>
+    
+            <div class="about">
+                <p>A propos</p>
+            </div>
         </div>
+        
         <form id="searchForm">
 
             <div class="form-group">
