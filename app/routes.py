@@ -15,6 +15,12 @@ main = Blueprint('main', __name__)
 def accueil():
     return render_template('accueil.html')
 
+
+@main.route('/portfolio')
+def portfolio():
+    return render_template('portfolio.html')
+
+
 @main.route('/top_tracks_artist')
 def top_tracks_artist():
     return render_template('top_tracks_artist.html')

@@ -20,11 +20,6 @@ form {
     justify-content: space-between;
 }
 /* Appliquer le même style au champ input spécifique */
-#artiste_search_input {
-    height: 40px; /* Ajuster la hauteur pour qu'elle corresponde à celle des selects */
-    width: calc(100% - 22px); /* Ajuster la largeur pour qu'elle corresponde à celle des selects, en prenant en compte les marges et padding */
-}
-
 
 
 label {
@@ -108,5 +103,19 @@ button {
 
 button:hover {
     background-color: #1ed760;
+}
+
+
+#artiste_search_input {
+    width: 100%; /* Prend toute la largeur de l'espace disponible */
+    background-color: #444; /* Couleur de fond sombre pour la barre de recherche */
+    color: #FFFFFF; /* Texte en blanc */
+    border: none; /* Pas de bordure */
+    border-radius: 5px; /* Coins arrondis */
+    padding: 10px; /* Espacement interne */
+    font-size: 16px; /* Taille de la police */
+}
+#artiste_search_input::placeholder {
+    color: #FFFFFF; /* Couleur du texte de l'espace réservé */
 }
 

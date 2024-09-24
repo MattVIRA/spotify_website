@@ -1,8 +1,10 @@
 body, html {
     padding: 0;
+    margin: 0;
     height: 100%;
     width: 100%;
     background-color: black;
+    overflow-y: auto;
 }
 
 .text-spotistat {
@@ -10,22 +12,19 @@ body, html {
     padding-left: 3px;
     justify-content: center;
 }
-
 .nav-bar {
     display: flex;
     justify-content: space-between; /* Ajoute cet attribut */
     align-items: center; /* Centre verticalement les éléments */
-    margin-bottom: 40px;
-    padding: 0 40px; /* Ajoute un peu d'espace latéral */
-}
+    margin-bottom: 30px;
+    padding: 10px 60px 0 60px; /* Ajoute un peu d'espace latéral */
 
-/* Logo à gauche du cadre */
+}
 #logo-spotistat {
     width: 55px; /* Taille du logo */
     height: 55px; 
-    padding-right: 8px;
+    margin-right: 8px;
 }
-
 .logo-spotistat {
     display: flex;
     align-items: center; /* Centre verticalement le logo et le texte */
@@ -33,21 +32,22 @@ body, html {
     color: #FFFFFF; /* Texte en blanc */
     font-size: 25px;
     font-family: 'Montserrat', sans-serif;
-}
+    cursor: pointer;
 
+}
 .about {
     color: #FFFFFF;
     font-size: 25px;
     font-family: 'Montserrat', sans-serif;
     margin-left: 20px; /* Ajoute un peu d'espace à gauche si nécessaire */
-}
+    cursor: pointer;
 
+}
 .search-bar {
     flex-grow: 1; /* Permet à la barre de recherche de prendre tout l'espace disponible */
     margin: 0 20px; /* Espace autour de la barre de recherche */
     max-width: 400px;
 }
-
 .input {
     width: 100%; /* Prend toute la largeur de l'espace disponible */
     background-color: #444; /* Couleur de fond sombre pour la barre de recherche */
@@ -57,7 +57,6 @@ body, html {
     padding: 10px; /* Espacement interne */
     font-size: 16px; /* Taille de la police */
 }
-
 .input::placeholder {
     color: #FFFFFF; /* Couleur du texte de l'espace réservé */
 }

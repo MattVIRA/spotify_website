@@ -6,80 +6,144 @@
     <title>Spotistat</title>
     <link rel="icon" href="{{ url_for('static', filename='images/icon_spotistats.png') }}" type="image/png">
 
-    <link rel="stylesheet" href="{{ url_for('static', filename='accueil.css') }}">
-    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/accueil.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet"> <!-- Google Fonts -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.9.3/css/bulma.min.css">
 
 </head>
 <body>
-    <div class="container">
+    <div class="main-container">
         <div class="nav-bar">
-            <div class="logo-spotistat">
+            <div class="logo-spotistat" data-url="{{ url_for('main.accueil') }}">
                 <img src="{{ url_for('static', filename='images/logo_spotistats.png') }}" alt="Logo Spotify" id="logo-spotistat">
                 <p class="text-spotistat">Spotistat</p>
 
             </div>
             <div class="search-bar">
-                <input class="input" type="text" placeholder="Rechercher une fonctionnalité...">
+                <input class="input" id="search_bar" type="text" placeholder="Rechercher une fonctionnalité...">
             </div>
     
-            <div class="about">
+            <div class="about" data-url="{{ url_for('main.portfolio') }}">
                 <p>A propos</p>
             </div>
         </div>
 
         <div class="main-box">
-            <div class="columns is-multiline">
-                <div class="column is-one-third">
-                    <a href="{{ url_for('main.top_tracks_artist') }}" class="card">
-                        <div class="card-image">
-                            <figure class="image is-4by3">
-                                <img src="{{ url_for('static', filename='images/icon_top_10.png') }}" alt="Top tracks by artist">
-                            </figure>
-                        </div>
-                        <div class="card-content">
-                            <p class="title is-4">Top tracks by artist</p>
-                            <p class="content">
-                                Découvrez les meilleures pistes par vos artistes préférés.
-                            </p>
-                        </div>
-                    </a>
+            <div class="feature-box" data-url="{{ url_for('main.top_tracks_artist') }}">
+                <div class="feature-logo">
+                    <img src="{{ url_for('static', filename='images/icon_top_10.png') }}" alt="Top tracks by artist">
                 </div>
-        
-                <div class="column is-one-third">
-                    <a href="{{ url_for('main.top_tracks_search') }}" class="card">
-                        <div class="card-image">
-                            <figure class="image is-4by3">
-                                <img src="{{ url_for('static', filename='images/icon_top_tracks_search.png') }}" alt="Top tracks by search">
-                            </figure>
-                        </div>
-                        <div class="card-content">
-                            <p class="title is-4">Top tracks by search</p>
-                            <p class="content">
-                                Recherchez et explorez les meilleurs morceaux disponibles.
-                            </p>
-                        </div>
-                    </a>
-                </div>
-        
-                <div class="column is-one-third">
-                    <a href="{{ url_for('main.login') }}" class="card">
-                        <div class="card-image">
-                            <figure class="image is-4by3">
-                                <img src="{{ url_for('static', filename='images/icon_me.png') }}" alt="À propos de moi">
-                            </figure>
-                        </div>
-                        <div class="card-content">
-                            <p class="title is-4">À propos de moi</p>
-                            <p class="content">
-                                En savoir plus sur moi et mes projets.
-                            </p>
-                        </div>
-                    </a>
+                <div class="feature-info">
+                    <h3 class="feature-title">Top tracks by artist</h3>
+                    <p class="feature-description">Découvrez les meilleures pistes par vos artistes préférés.</p>
                 </div>
             </div>
+            
+            <div class="feature-box" data-url="{{ url_for('main.top_tracks_search') }}">
+                <div class="feature-logo">
+                    <img src="{{ url_for('static', filename='images/icon_top_tracks_search.png') }}" alt="Top tracks global">
+                </div>
+                <div class="feature-info">
+                    <h3 class="feature-title">Top tracks by search</h3>
+                    <p class="feature-description"> Recherchez et explorez les meilleurs morceaux disponibles.</p>
+                </div>
+            </div>
+
+            <div class="feature-box" data-url="{{ url_for('main.login') }}">
+                <div class="feature-logo">
+                    <img src="{{ url_for('static', filename='images/icon_me.png') }}" alt="About me">
+                </div>
+                <div class="feature-info">
+                    <h3 class="feature-title">À propos de moi</h3>
+                    <p class="feature-description">En savoir plus sur moi et mes artistes préférés.</p>
+                </div>
+            </div>
+
+            <div class="feature-box" data-url="{{ url_for('main.portfolio') }}">
+                <div class="feature-logo">
+                    <img src="{{ url_for('static', filename='images/gear_icon.png') }}" alt="zzz">
+                </div>
+                <div class="feature-info">
+                    <h3 class="feature-title">Not Yet Available...</h3>
+                    <p class="feature-description">...</p>
+                </div>
+            </div>
+            <div class="feature-box" data-url="{{ url_for('main.portfolio') }}">
+                <div class="feature-logo">
+                    <img src="{{ url_for('static', filename='images/gear_icon.png') }}" alt="zzz">
+                </div>
+                <div class="feature-info">
+                    <h3 class="feature-title">Not Yet Available...</h3>
+                    <p class="feature-description">...</p>
+                </div>
+            </div>
+            <div class="feature-box" data-url="{{ url_for('main.portfolio') }}">
+                <div class="feature-logo">
+                    <img src="{{ url_for('static', filename='images/gear_icon.png') }}" alt="zzz">
+                </div>
+                <div class="feature-info">
+                    <h3 class="feature-title">Not Yet Available...</h3>
+                    <p class="feature-description">...</p>
+                </div>
+            </div>
+            <div class="feature-box" data-url="{{ url_for('main.portfolio') }}">
+                <div class="feature-logo">
+                    <img src="{{ url_for('static', filename='images/gear_icon.png') }}" alt="zzz">
+                </div>
+                <div class="feature-info">
+                    <h3 class="feature-title">Not Yet Available...</h3>
+                    <p class="feature-description">...</p>
+                </div>
+            </div>
+            <div class="feature-box" data-url="{{ url_for('main.portfolio') }}">
+                <div class="feature-logo">
+                    <img src="{{ url_for('static', filename='images/gear_icon.png') }}" alt="zzz">
+                </div>
+                <div class="feature-info">
+                    <h3 class="feature-title">Not Yet Available...</h3>
+                    <p class="feature-description">...</p>
+                </div>
+            </div>
+            <div class="feature-box" data-url="{{ url_for('main.portfolio') }}">
+                <div class="feature-logo">
+                    <img src="{{ url_for('static', filename='images/gear_icon.png') }}" alt="zzz">
+                </div>
+                <div class="feature-info">
+                    <h3 class="feature-title">Not Yet Available...</h3>
+                    <p class="feature-description">...</p>
+                </div>
+            </div>
+            <div class="feature-box" data-url="{{ url_for('main.portfolio') }}">
+                <div class="feature-logo">
+                    <img src="{{ url_for('static', filename='images/gear_icon.png') }}" alt="zzz">
+                </div>
+                <div class="feature-info">
+                    <h3 class="feature-title">Not Yet Available...</h3>
+                    <p class="feature-description">...</p>
+                </div>
+            </div>
+            <div class="feature-box" data-url="{{ url_for('main.portfolio') }}">
+                <div class="feature-logo">
+                    <img src="{{ url_for('static', filename='images/gear_icon.png') }}" alt="zzz">
+                </div>
+                <div class="feature-info">
+                    <h3 class="feature-title">Not Yet Available...</h3>
+                    <p class="feature-description">...</p>
+                </div>
+            </div>
+            <div class="feature-box" data-url="{{ url_for('main.portfolio') }}">
+                <div class="feature-logo">
+                    <img src="{{ url_for('static', filename='images/gear_icon.png') }}" alt="zzz">
+                </div>
+                <div class="feature-info">
+                    <h3 class="feature-title">Not Yet Available...</h3>
+                    <p class="feature-description">...</p>
+                </div>
+            </div>
+
+
         </div>
-        
+    <script src="{{ url_for('static', filename='scripts.js') }}"></script>    
+    <script src="{{ url_for('static', filename='accueil.js') }}"></script>    
 </body>
 </html>

@@ -5,15 +5,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>À propos de moi</title>
     <link rel="icon" href="{{ url_for('static', filename='images/icon_spotistats.png') }}" type="image/png">
-    <link rel="stylesheet" href="{{ url_for('static', filename='info_page.css') }}">
-    
-    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+
+
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet"> <!-- Google Fonts -->
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/info_page.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
 </head>
 
 <body>
-    <div class="container">
+    <div class="main-container">
         <div class="nav-bar">
-            <div class="logo-spotistat">
+            <div class="logo-spotistat" data-url="{{ url_for('main.accueil') }}">
                 <img src="{{ url_for('static', filename='images/logo_spotistats.png') }}" alt="Logo Spotify" id="logo-spotistat">
                 <p class="text-spotistat">Spotistat</p>
 

@@ -4,36 +4,44 @@ let selectedArtist = {
     imageUrl: null
 };
 
-
-// On récupère les éléments
-const homeButton = document.querySelector('.home-button');
-const homeIcon = document.querySelector('.logo-home');
-
-// Utilisation de getBoundingClientRect pour obtenir la taille de l'élément
-const rect = homeIcon.getBoundingClientRect();
-
-homeButton.addEventListener('mouseover', () => {
-    homeButton.style.width = '150px'; // Largeur de la div pour montrer le texte, ajustable selon besoin
-    // Appliquer l'opacité ou autre style au texte à dérouler si nécessaire
-    if (!document.querySelector('.home-text')) {
-    // Créer une nouvelle div
-    const homeTextDiv = document.createElement('div');
-    homeTextDiv.classList.add('home-text');
-    homeTextDiv.innerText = 'HOME';
-    // Ajoute la div au bouton
-    homeButton.appendChild(homeTextDiv);
-}
+document.addEventListener('DOMContentLoaded', function() {
+    const logoSpotistat = document.querySelector('.logo-spotistat');
+    
+    // Ajouter un listener pour le clic
+    if (logoSpotistat) {
+        logoSpotistat.addEventListener('click', function() {
+            // Récupérer l'URL depuis l'attribut data-url
+            const urlAccueil = logoSpotistat.getAttribute('data-url');
+            // Redirection vers la page d'accueil
+            window.location.href = urlAccueil;
+        });
+    }
 });
 
-// Fonction pour enrouler le texte à la sortie de la souris
-homeButton.addEventListener('mouseout', () => {
-    const homeTextDiv = document.querySelector('.home-text');
-    if (homeTextDiv) {
-        homeTextDiv.remove(); // Supprime la div
-    }
-
-    // Utiliser la valeur récupérée pour remettre la taille initiale
-    homeButton.style.width = `${rect.width}px`; // Rétrécir la div pour cacher le texte
+document.addEventListener('DOMContentLoaded', function() {
+    const about = document.querySelector('.about');
     
+    // Ajouter un listener pour le clic
+    if (about) {
+        about.addEventListener('click', function() {
+            // Récupérer l'URL depuis l'attribut data-url
+            const urlPortfolio = about.getAttribute('data-url');
+            // Redirection vers la page d'accueil
+            window.location.href = urlPortfolio;
+        });
+    }
+});
+
+
+
+document.addEventListener('DOMContentLoaded', (event) => {
+    const functionalityInput = document.getElementById('search_bar');
+    
+    functionalityInput.addEventListener('keydown', (event) => {
+        if (event.key === 'Enter') {
+            event.preventDefault();
+            console.log(document.getElementById('search_bar').value);
+        }
+    });
 });
 
